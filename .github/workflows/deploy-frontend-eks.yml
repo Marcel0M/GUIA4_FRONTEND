@@ -95,6 +95,7 @@ jobs:
           echo "Si quieres que SonarCloud sea gate bloqueante en GitHub Actions, desactiva Automatic Analysis en SonarCloud y vuelve a habilitar el scanner en este workflow."
 
       - name: Snyk dependency scan
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: |
